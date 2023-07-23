@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css" />
+    <title>Digital Clock</title>
+</head>
+
+<body onload="digitalClock()">
+
+    <div class=" container ">
+        <h1>Welcome to Telugu WebTech</h1>
+
+        <div class="timer ">
+
+        </div>
+
+    </div>
+
+    <script>
+        function digitalClock() {
+            let day = new Date()
+            let hours = day.getHours()
+            let minutes = day.getMinutes();
+            let seconds = day.getSeconds();
+
+            seconds = seconds < 10 ? "0" + seconds : seconds
+
+            let time = hours + " " + ": " + minutes + " " + ": " + seconds + " "
+
+            document.getElementsByClassName("timer ")[0].textContent = time
+
+            setTimeout(digitalClock, 1000)
+        }
+    </script>
+
+</body>
+
+</html>
